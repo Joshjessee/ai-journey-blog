@@ -1,0 +1,150 @@
+/*
+  Global Styles for AI Journey Blog
+
+  Tailwind directives import the framework's styles:
+  - @tailwind base: Reset/normalize styles
+  - @tailwind components: Component classes
+  - @tailwind utilities: Utility classes (the main Tailwind magic)
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/*
+  CSS Custom Properties (Variables)
+  These define colors that change between light and dark mode
+*/
+:root {
+  /* Light mode colors */
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  --border: 226 232 240;
+  --card: 255 255 255;
+}
+
+.dark {
+  /* Dark mode colors */
+  --background: 15 23 42;
+  --foreground: 248 250 252;
+  --muted: 30 41 59;
+  --muted-foreground: 148 163 184;
+  --border: 51 65 85;
+  --card: 30 41 59;
+}
+
+/* Base styles */
+body {
+  /* Use CSS variables with Tailwind's rgb() syntax */
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Glass morphism effect - modern frosted glass look */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth scrolling for the whole page */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Markdown/Blog post styling */
+@layer components {
+  .prose-custom {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+
+  .prose-custom h1 {
+    @apply text-3xl font-bold text-slate-900 dark:text-white mt-8 mb-4;
+  }
+
+  .prose-custom h2 {
+    @apply text-2xl font-semibold text-slate-900 dark:text-white mt-6 mb-3;
+  }
+
+  .prose-custom h3 {
+    @apply text-xl font-semibold text-slate-900 dark:text-white mt-4 mb-2;
+  }
+
+  .prose-custom p {
+    @apply my-4 leading-relaxed;
+  }
+
+  .prose-custom a {
+    @apply text-primary-500 hover:text-primary-600 underline decoration-primary-500/30 hover:decoration-primary-500 transition-colors;
+  }
+
+  .prose-custom code {
+    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-primary-600 dark:text-primary-400;
+  }
+
+  .prose-custom pre {
+    @apply bg-slate-900 dark:bg-slate-950 text-slate-100 p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .prose-custom pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic my-4 text-slate-600 dark:text-slate-400;
+  }
+
+  .prose-custom ul {
+    @apply list-disc list-inside my-4 space-y-2;
+  }
+
+  .prose-custom ol {
+    @apply list-decimal list-inside my-4 space-y-2;
+  }
+
+  .prose-custom img {
+    @apply rounded-lg shadow-md my-6;
+  }
+}
+
+/* Selection highlighting */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+}
