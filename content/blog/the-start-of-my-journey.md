@@ -2,7 +2,7 @@
 title: "The Start of My Journey"
 description: "My goal and how I came to be right here"
 date: "2026-01-19"
-tags: ["Goals", "Journey", "Start"]
+tags: ["Goals", "Journey", "AI"]
 
 ---
 
