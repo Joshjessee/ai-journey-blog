@@ -1,6 +1,7 @@
 # AI Journey Blog
 
 A modern, minimalist blog and learning tracker for documenting your journey into AI. Built with Next.js 14, Tailwind CSS, and Framer Motion.
+https://ai-journey-blog-iota.vercel.app/
 
 ## Features
 
