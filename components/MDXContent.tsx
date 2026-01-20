@@ -92,7 +92,7 @@ const components = {
 
   // Paragraphs
   p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="my-4 leading-relaxed text-slate-700 dark:text-slate-300" {...props}>
+    <p className="my-4 leading-relaxed text-slate-700 dark:text-slate-300 indent-8" {...props}>
       {children}
     </p>
   ),
