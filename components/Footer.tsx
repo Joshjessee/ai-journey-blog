@@ -8,13 +8,13 @@
 */
 
 import Link from "next/link";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, BookText, Twitter, Mail } from "lucide-react";
 
 // Social links - update these with your actual profiles
 const socialLinks = [
   { href: "https://github.com/yourusername", label: "GitHub", icon: Github },
+  { href: "https://yourusername.substack.com", label: "Substack", icon: BookText },
   { href: "https://twitter.com/yourusername", label: "Twitter", icon: Twitter },
-  { href: "https://linkedin.com/in/yourusername", label: "LinkedIn", icon: Linkedin },
   { href: "mailto:your@email.com", label: "Email", icon: Mail },
 ];
 
