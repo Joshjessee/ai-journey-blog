@@ -23,6 +23,7 @@ import {
   Moon,
   Monitor,
   BookOpen,
+  Newspaper,
   Brain,
   Home,
   User,
@@ -32,7 +33,7 @@ import {
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/blog", label: "Blog", icon: BookOpen },
-  { href: "/learn", label: "Learn", icon: Brain },
+  { href: "/news", label: "News", icon: Newspaper },
   { href: "/about", label: "About", icon: User },
 ];
 
