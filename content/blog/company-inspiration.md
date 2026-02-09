@@ -1,10 +1,8 @@
-
 ---
 title: "Company Inspiration"
 description: "Researching and writing about companies that inspire me"
 date: "2026-02-09"
 tags: ["Goals", "Inspiration", "Uncertainty"]
-
 ---
 # Decisions, Decisions
 
