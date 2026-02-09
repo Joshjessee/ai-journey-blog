@@ -1,3 +1,11 @@
+
+---
+title: "Company Inspiration"
+description: "Researching and writing about companies that inspire me"
+date: "2026-02-09"
+tags: ["Goals", "Inspiration", "Uncertainty"]
+
+---
 # Decisions, Decisions
 
 As I mentioned in my first blog post, I don't really have any idea of what exactly I want to do. I do know that I don't really want a traditional 9-5. While starting my own **business** is the most exciting and inspiring to me, I do understand that it is incredibly difficult and I'm super underqualified. I'm not opposed to joining a startup or smaller company to really get my hands dirty and get a better idea of how certain businesses work. However, not only am I struggling to find one, but I do have a minimum that I need to make a year—seeing as I am no longer a twenty-something with very few bills. In light of that, I've decided to write about the companies that I have found super interesting as well as inspiring, in hopes to gain some inspiration and/or direction.
