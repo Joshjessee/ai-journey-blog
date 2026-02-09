@@ -31,6 +31,19 @@ export interface BlogPost {
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 /*
+  Convert a filename into a URL-safe slug
+  e.g., "Post 2 Company Inspiration" -> "post-2-company-inspiration"
+*/
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/*
   Calculate estimated reading time
   Average reading speed is about 200-250 words per minute
 */
@@ -67,8 +80,8 @@ export function getAllPosts(): BlogPost[] {
     // Parse frontmatter and content using gray-matter
     const { data, content } = matter(fileContents);
 
-    // Create slug from filename (remove .md or .mdx extension)
-    const slug = filename.replace(/\.mdx?$/, "");
+    // Create URL-safe slug from filename (remove extension, normalize)
+    const slug = slugify(filename.replace(/\.mdx?$/, ""));
 
     return {
       slug,
@@ -91,13 +104,17 @@ export function getAllPosts(): BlogPost[] {
   This is used for individual post pages
 */
 export function getPostBySlug(slug: string): BlogPost | null {
-  // Try both .md and .mdx extensions
-  const extensions = [".md", ".mdx"];
+  if (!fs.existsSync(BLOG_DIR)) return null;
 
-  for (const ext of extensions) {
-    const filePath = path.join(BLOG_DIR, `${slug}${ext}`);
+  // Find the file whose slugified name matches the requested slug
+  const files = fs.readdirSync(BLOG_DIR).filter(
+    (file) => file.endsWith(".md") || file.endsWith(".mdx")
+  );
 
-    if (fs.existsSync(filePath)) {
+  for (const filename of files) {
+    const fileSlug = slugify(filename.replace(/\.mdx?$/, ""));
+    if (fileSlug === slug) {
+      const filePath = path.join(BLOG_DIR, filename);
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data, content } = matter(fileContents);
 
@@ -152,5 +169,5 @@ export function getAllPostSlugs(): string[] {
 
   return fs.readdirSync(BLOG_DIR)
     .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
-    .map((file) => file.replace(/\.mdx?$/, ""));
+    .map((file) => slugify(file.replace(/\.mdx?$/, "")));
 }
