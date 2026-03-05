@@ -34,7 +34,7 @@ const navLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/blog", label: "Blog", icon: BookOpen },
   { href: "/news", label: "News", icon: Newspaper },
-  { href: "/about", label: "About", icon: User },
+  { href: "/side-quests", label: "Side Quests", icon: User },
 ];
 
 export function Navigation() {
