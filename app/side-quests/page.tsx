@@ -20,7 +20,7 @@ export default function SideQuestsPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-            <span className="text-4xl text-white font-bold">YN</span>
+            <span className="text-4xl text-white font-bold">Josh</span>
           </div>
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
             Side Quests
