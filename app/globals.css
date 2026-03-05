@@ -1,3 +1,6 @@
+/* Import Google Fonts - must be before all other rules */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 /*
   Global Styles for AI Journey Blog
 
@@ -10,9 +13,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /*
   CSS Custom Properties (Variables)
