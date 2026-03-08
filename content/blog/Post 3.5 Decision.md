@@ -1,6 +1,6 @@
 ---
 title: "Burn the Boats: The Idea That Hit Me Like a Bag of Bricks"
-date: "2026-02-12"
+date: "2026-02-13"
 description: "I stopped playing it safe. Here's the wild idea I landed on — and why it started with skydiving cutaways and a conversation with Gemini."
 tags: ["Goals", "Company", "AI", "Entrepreneurship", "Learning"]
 ---
