@@ -4,6 +4,7 @@ description: "I've decided what I want to do"
 date: "2026-02-12"
 tags: ["Goals", "Company", "AI"]
 ---
+
 # Decision Made
 
 I have made a decision about my company I want to start. As I've said many times, I feel very uncertain about exactly what I want to do with AI. The other day my wife and I went to breakfast and afterwards decided to work on our computers. I was having trouble focusing so I decided to talk to Gemini about my future business. I told Gemini to be a professional business coach and to be harsh, realistic, and to push me. Needless to say, it did not hold back and honestly I was surprised by how much it actually knew about me. We discussed a "safe" option, still related to the restaurant industry and a innovative option, where we are trying something bigger and bolder. When discussing the safe option, it pointed out that I seemed bored just talking about it so what's going to happen when times get tough. It was a very valid point and honestly I was already reluctant about it. After that we decided to "bet it all" and do something new, exciting, and completely outside the restaurant industry.
