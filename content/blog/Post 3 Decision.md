@@ -1,7 +1,8 @@
-
 ---
 title: "Decision Made"
+description: "I've decided what I want to do"
 date: "2026-02-12"
+tags: ["Goals", "Company", "AI"]
 ---
 # Decision Made
 
