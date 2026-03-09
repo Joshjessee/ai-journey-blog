@@ -1,4 +1,3 @@
-
 ---
 title: "My Decision"
 description: "After a crazy breakfast I've decided what I want to do"
