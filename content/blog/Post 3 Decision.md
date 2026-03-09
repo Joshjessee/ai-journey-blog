@@ -1,7 +1,7 @@
 ---
 title: "My Decision"
 description: "After a crazy breakfast I've decided what I want to do"
-date: "2026-02-27"
+date: "2026-02-13"
 tags: ["Goals", "Inspiration", "Uncertainty"]
 ---
 
