@@ -81,6 +81,11 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Balanced text wrapping for headlines */
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 /* Markdown/Blog post styling */
