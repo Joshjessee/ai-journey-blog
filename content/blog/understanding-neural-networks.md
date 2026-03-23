@@ -4,6 +4,9 @@ description: "How I finally understood neural networks by thinking of them like 
 date: "2024-01-22"
 tags: ["Machine Learning", "Neural Networks", "Beginner"]
 ---
+# I did not write this
+
+Claude wrote this when it built my website. I originally intended to delete it but after reading it I thought it was clever and funny. I like it's analogy to a kitchen but I, in no way, think like this.
 
 # Neural Networks: The Restaurant Kitchen of AI
 
