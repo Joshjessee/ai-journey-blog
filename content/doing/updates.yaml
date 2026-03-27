@@ -1,19 +1,23 @@
-- date: "2026-03-23"
-  title: "Blog redesign"
-  description: "Redesigned the AI Journey blog with a more dynamic homepage layout, simplified navigation, and added the What I'm Doing page to track daily work"
-  tags: ["claude-code", "blog"]
-  status: "in-progress"
-  link: "https://github.com/Joshjessee/ai-journey-blog"
-
-- date: "2026-03-22"
-  title: "Published Post 4 - Anthropic vs The Pentagon"
-  description: "Wrote and published a new blog post exploring the intersection of AI and defense, examining Anthropic's stance on military applications"
-  tags: ["blog", "writing"]
-  status: "completed"
-
-- date: "2026-03-20"
-  title: "AI News aggregator improvements"
-  description: "Enhanced the RSS feed parser with better category detection and added new sources for AI news coverage"
-  tags: ["github", "blog"]
-  status: "completed"
-  link: "https://github.com/Joshjessee/ai-journey-blog"
+- date: '2026-03-27'
+  title: 2 updates to ai-journey-blog
+  description: "- Add GitHub Actions workflow to auto-update What I'm Doing page\n- Merge pull request #10 from Joshjessee/claude/redesign-website-layout-q3pjM"
+  tags: [claude-code, design, devops]
+  status: completed
+  link: https://github.com/Joshjessee/ai-journey-blog/compare/d49364b...e1f5e9e
+- date: '2026-03-23'
+  title: Blog redesign
+  description: Redesigned the AI Journey blog with a more dynamic homepage layout, simplified navigation, and added the What I'm Doing page to track daily work
+  tags: [claude-code, blog]
+  status: in-progress
+  link: https://github.com/Joshjessee/ai-journey-blog
+- date: '2026-03-22'
+  title: Published Post 4 - Anthropic vs The Pentagon
+  description: Wrote and published a new blog post exploring the intersection of AI and defense, examining Anthropic's stance on military applications
+  tags: [blog, writing]
+  status: completed
+- date: '2026-03-20'
+  title: AI News aggregator improvements
+  description: Enhanced the RSS feed parser with better category detection and added new sources for AI news coverage
+  tags: [github, blog]
+  status: completed
+  link: https://github.com/Joshjessee/ai-journey-blog
