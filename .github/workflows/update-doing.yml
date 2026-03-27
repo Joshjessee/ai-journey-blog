@@ -1,0 +1,39 @@
+name: Update Doing Log
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: update-doing
+  cancel-in-progress: false
+
+jobs:
+  update-doing:
+    if: github.event.head_commit.author.name != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Update doing log
+        run: node scripts/update-doing.mjs
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet content/doing/updates.yaml && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/doing/updates.yaml
+          git commit -m "[auto] Update doing log for $(date -u +%Y-%m-%d)"
+          git push
