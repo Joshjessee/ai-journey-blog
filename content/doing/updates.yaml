@@ -1,3 +1,9 @@
+- date: '2026-03-30'
+  title: 2 updates to ai-journey-blog
+  description: "- Fix stale in-progress status on What I'm Doing page\n- Merge pull request #11 from Joshjessee/claude/fix-post-status-display-JvxLc"
+  tags: [blog, claude-code, bugfix, design]
+  status: completed
+  link: https://github.com/Joshjessee/ai-journey-blog/compare/dbeeff1...c27bf56
 - date: '2026-03-27'
   title: 2 updates to ai-journey-blog
   description: "- Add GitHub Actions workflow to auto-update What I'm Doing page\n- Merge pull request #10 from Joshjessee/claude/redesign-website-layout-q3pjM"
