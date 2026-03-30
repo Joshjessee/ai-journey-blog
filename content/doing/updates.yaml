@@ -8,7 +8,7 @@
   title: Blog redesign
   description: Redesigned the AI Journey blog with a more dynamic homepage layout, simplified navigation, and added the What I'm Doing page to track daily work
   tags: [claude-code, blog]
-  status: in-progress
+  status: completed
   link: https://github.com/Joshjessee/ai-journey-blog
 - date: '2026-03-22'
   title: Published Post 4 - Anthropic vs The Pentagon
