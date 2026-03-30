@@ -97,6 +97,22 @@ if (todayIndex !== -1) {
   });
 }
 
+// Auto-complete stale in-progress entries with overlapping tags (older than 3 days)
+const threeDaysAgo = new Date(Date.now() - 3 * 24 * 60 * 60 * 1000)
+  .toISOString()
+  .split("T")[0];
+
+for (const entry of existing) {
+  if (
+    entry.status === "in-progress" &&
+    entry.date < threeDaysAgo &&
+    entry.tags?.some((t) => newTags.includes(t))
+  ) {
+    console.log(`Auto-completing stale entry: "${entry.title}" (${entry.date})`);
+    entry.status = "completed";
+  }
+}
+
 // Write back
 fs.writeFileSync(
   yamlPath,
