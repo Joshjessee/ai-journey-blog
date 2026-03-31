@@ -34,7 +34,7 @@ export default function SideQuestsPage() {
         <div className="prose-custom space-y-6">
           <section>
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-              My Story
+              My Hobbies
             </h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               For years, I worked in the restaurant industry. I learned how to
