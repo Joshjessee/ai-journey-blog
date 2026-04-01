@@ -49,13 +49,12 @@ export function SkyDivingGallery({ images }: SkyDivingGalleryProps) {
           <Wind className="w-6 h-6 text-accent-500" />
         </div>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-          Skydiving
+          Skydiving(Gradient Descent :P)
         </h2>
       </div>
       <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl">
-        Nothing resets the mind like freefall. I've been jumping for a few years
-        — from belly flying to working on sit-fly. The sky is the one place where
-        nothing else matters.
+        I've been skydiving for a little over a decade. I prefer angle flying and free flying
+        but I'm always just happy to jump out of plane. 
       </p>
 
       {/* Masonry grid */}
