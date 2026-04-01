@@ -1,148 +1,129 @@
 /*
-  Side Quests Page
+  Side Quests Page — Hobbies & Interests
 
-  About me, side projects, and things I'm exploring outside the main journey.
+  Rock climbing (photos coming soon), skydiving gallery,
+  favorite books, video games, and movies.
 */
 
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { RockClimbingSection } from "@/components/side-quests/RockClimbingSection";
+import { SkyDivingGallery } from "@/components/side-quests/SkyDivingGallery";
+import { MediaGrid, MediaItem } from "@/components/side-quests/MediaGrid";
 
 export const metadata: Metadata = {
   title: "Side Quests",
-  description: "About me and the side quests I'm on alongside my AI journey.",
+  description:
+    "Rock climbing, skydiving, books, games, and movies — the adventures alongside the AI journey.",
 };
+
+// ─── Skydiving images ────────────────────────────────────────────────────────
+// Add your photos to /public/images/side-quests/skydiving/
+// and name them skydiving-01.jpg through skydiving-06.jpg
+
+const SKYDIVING_IMAGES = [
+  {
+    src: "/images/side-quests/skydiving/skydiving-01.jpg",
+    alt: "Skydiving in freefall",
+    caption: "Freefall over the desert",
+  },
+  {
+    src: "/images/side-quests/skydiving/skydiving-02.jpg",
+    alt: "Exiting the aircraft",
+    caption: "Exit from the Otter",
+  },
+  {
+    src: "/images/side-quests/skydiving/skydiving-03.jpg",
+    alt: "Formation skydiving with friends",
+    caption: "3-way formation",
+  },
+  {
+    src: "/images/side-quests/skydiving/skydiving-04.jpg",
+    alt: "In the aircraft before the jump",
+    caption: "Gearing up in the plane",
+  },
+  {
+    src: "/images/side-quests/skydiving/skydiving-05.jpg",
+    alt: "Selfie in freefall near a cloud",
+    caption: "Above the clouds",
+  },
+  {
+    src: "/images/side-quests/skydiving/skydiving-06.jpg",
+    alt: "Skydiving action shot",
+    caption: "Full send",
+  },
+];
+
+// ─── Books ────────────────────────────────────────────────────────────────────
+const BOOKS: MediaItem[] = [
+  { title: "The Pragmatic Programmer", subtitle: "Hunt & Thomas", emoji: "💻", genre: "Tech" },
+  { title: "Dune", subtitle: "Frank Herbert", emoji: "🏜️", genre: "Sci-Fi" },
+  { title: "Atomic Habits", subtitle: "James Clear", emoji: "⚙️", genre: "Self-Help" },
+  { title: "Project Hail Mary", subtitle: "Andy Weir", emoji: "🚀", genre: "Sci-Fi" },
+  { title: "The Hitchhiker's Guide", subtitle: "Douglas Adams", emoji: "🌌", genre: "Humor" },
+  { title: "Clean Code", subtitle: "Robert C. Martin", emoji: "✨", genre: "Tech" },
+];
+
+// ─── Video Games ─────────────────────────────────────────────────────────────
+const GAMES: MediaItem[] = [
+  { title: "Elden Ring", subtitle: "FromSoftware", emoji: "⚔️", genre: "Action RPG" },
+  { title: "Zelda: BOTW", subtitle: "Nintendo", emoji: "🗡️", genre: "Adventure" },
+  { title: "Hollow Knight", subtitle: "Team Cherry", emoji: "🦋", genre: "Metroidvania" },
+  { title: "Stardew Valley", subtitle: "ConcernedApe", emoji: "🌾", genre: "Simulation" },
+  { title: "Minecraft", subtitle: "Mojang", emoji: "⛏️", genre: "Sandbox" },
+  { title: "Dark Souls", subtitle: "FromSoftware", emoji: "🔥", genre: "Action RPG" },
+];
+
+// ─── Movies ───────────────────────────────────────────────────────────────────
+const MOVIES: MediaItem[] = [
+  { title: "Interstellar", subtitle: "Christopher Nolan", emoji: "🪐", genre: "Sci-Fi" },
+  { title: "The Matrix", subtitle: "The Wachowskis", emoji: "💊", genre: "Sci-Fi" },
+  { title: "Mad Max: Fury Road", subtitle: "George Miller", emoji: "🔧", genre: "Action" },
+  { title: "Arrival", subtitle: "Denis Villeneuve", emoji: "🛸", genre: "Sci-Fi" },
+  { title: "Everything Everywhere", subtitle: "Daniels", emoji: "🥢", genre: "Drama" },
+  { title: "Grand Budapest Hotel", subtitle: "Wes Anderson", emoji: "🏨", genre: "Comedy" },
+];
 
 export default function SideQuestsPage() {
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-            <span className="text-4xl text-white font-bold">Josh</span>
-          </div>
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Page header */}
+        <div className="mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Side Quests
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            From restaurant tables to neural networks
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+            Life beyond the terminal. The hobbies, adventures, and stories that
+            fuel everything else.
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="prose-custom space-y-6">
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-              My Hobbies
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              For years, I worked in the restaurant industry. I learned how to
-              think on my feet, solve problems under pressure, and understand
-              what people need before they ask. These skills served me well, but
-              I always felt drawn to technology.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              When I first encountered AI through tools like ChatGPT, something
-              clicked. The way these systems could understand and generate
-              human-like text fascinated me. I knew I wanted to understand how
-              they worked, not just use them.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              So I made a decision: I would teach myself AI and machine learning,
-              documenting everything along the way. This blog is that documentation.
-            </p>
-          </section>
+        {/* Sections */}
+        <div className="space-y-24">
+          <RockClimbingSection />
 
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-              Why This Blog?
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I believe in learning in public. By documenting my journey, I hope to:
-            </p>
-            <ul className="space-y-2 mt-4">
-              <li className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                <span className="text-primary-500">1.</span>
-                <span>
-                  <strong className="text-slate-900 dark:text-white">Solidify my understanding</strong> —
-                  Teaching is the best way to learn
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                <span className="text-primary-500">2.</span>
-                <span>
-                  <strong className="text-slate-900 dark:text-white">Help others</strong> —
-                  If you&apos;re also starting your AI journey, maybe my experiences can help
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                <span className="text-primary-500">3.</span>
-                <span>
-                  <strong className="text-slate-900 dark:text-white">Stay accountable</strong> —
-                  Public commitment makes it harder to give up
-                </span>
-              </li>
-            </ul>
-          </section>
+          <SkyDivingGallery images={SKYDIVING_IMAGES} />
 
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-              Get In Touch
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-              I&apos;d love to connect with others on similar journeys. Whether you
-              have questions, suggestions, or just want to say hi, feel free to
-              reach out!
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { href: "mailto:your@email.com", icon: Mail, label: "Email" },
-                { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
-                { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
-                { href: "https://linkedin.com/in/yourusername", icon: Linkedin, label: "LinkedIn" },
-              ].map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                  >
-                    <Icon className="w-4 h-4" />
-                    {social.label}
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-        </div>
+          <MediaGrid
+            title="Favorite Books"
+            headerEmoji="📚"
+            items={BOOKS}
+            accentColor="primary"
+          />
 
-        {/* CTA */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-800/50 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-            Ready to explore?
-          </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-4">
-            Check out my latest posts or see what&apos;s happening in AI.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
-            >
-              Read the Blog
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/news"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-white rounded-lg font-medium transition-colors"
-            >
-              Latest AI News
-            </Link>
-          </div>
+          <MediaGrid
+            title="Favorite Games"
+            headerEmoji="🎮"
+            items={GAMES}
+            accentColor="accent"
+          />
+
+          <MediaGrid
+            title="Favorite Movies"
+            headerEmoji="🎬"
+            items={MOVIES}
+            accentColor="primary"
+          />
         </div>
       </div>
     </div>
