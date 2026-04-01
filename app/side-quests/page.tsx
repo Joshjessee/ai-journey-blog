@@ -16,6 +16,38 @@ export const metadata: Metadata = {
     "Rock climbing, skydiving, books, games, and movies — the adventures alongside the AI journey.",
 };
 
+// ─── Rock Climbing images ────────────────────────────────────────────────────
+// Add your photos to /public/images/side-quests/rock-climbing/
+// and name them rock-climbing-01.jpg through rock-climbing-05.jpg
+
+const ROCK_CLIMBING_IMAGES = [
+  {
+    src: "/images/side-quests/rock-climbing/rock-climbing-01.jpg",
+    alt: "Rock climbing on a sandstone cave overhang",
+    caption: "Cave overhang",
+  },
+  {
+    src: "/images/side-quests/rock-climbing/rock-climbing-02.jpg",
+    alt: "Ice climbing on a blue ice wall",
+    caption: "Ice climbing",
+  },
+  {
+    src: "/images/side-quests/rock-climbing/rock-climbing-03.jpg",
+    alt: "Bouldering on granite",
+    caption: "Bouldering",
+  },
+  {
+    src: "/images/side-quests/rock-climbing/rock-climbing-04.jpg",
+    alt: "Sport climbing in a large cave arch",
+    caption: "Cave arch sport route",
+  },
+  {
+    src: "/images/side-quests/rock-climbing/rock-climbing-05.jpg",
+    alt: "Fall climbing on a vertical face",
+    caption: "Fall season climbing",
+  },
+];
+
 // ─── Skydiving images ────────────────────────────────────────────────────────
 // Add your photos to /public/images/side-quests/skydiving/
 // and name them skydiving-01.jpg through skydiving-06.jpg
@@ -100,7 +132,7 @@ export default function SideQuestsPage() {
 
         {/* Sections */}
         <div className="space-y-24">
-          <RockClimbingSection />
+          <RockClimbingSection images={ROCK_CLIMBING_IMAGES} />
 
           <SkyDivingGallery images={SKYDIVING_IMAGES} />
 

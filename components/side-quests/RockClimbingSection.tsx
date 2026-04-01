@@ -1,11 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mountain, Camera } from "lucide-react";
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mountain, ZoomIn } from "lucide-react";
+import { Lightbox } from "./Lightbox";
 
-export function RockClimbingSection() {
-  // Placeholder cards — swap out for real images once available
-  const placeholderSlots = Array.from({ length: 4 });
+interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface RockClimbingSectionProps {
+  images: GalleryImage[];
+}
+
+export function RockClimbingSection({ images }: RockClimbingSectionProps) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [direction, setDirection] = useState(1);
+  const [loadErrors, setLoadErrors] = useState<Set<number>>(new Set());
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setDirection(1);
+  };
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  const goNext = useCallback(() => {
+    setDirection(1);
+    setLightboxIndex((i) => (i !== null ? Math.min(i + 1, images.length - 1) : null));
+  }, [images.length]);
+
+  const goPrev = useCallback(() => {
+    setDirection(-1);
+    setLightboxIndex((i) => (i !== null ? Math.max(i - 1, 0) : null));
+  }, []);
+
+  const handleImageError = (index: number) => {
+    setLoadErrors((prev) => new Set(prev).add(index));
+  };
 
   return (
     <section>
@@ -19,33 +53,67 @@ export function RockClimbingSection() {
         </h2>
       </div>
       <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl">
-        From bouldering in the gym to sport routes outdoors — climbing is the
-        puzzle that never gets old. Every problem is unique, every send is earned.
-        Photos coming soon.
+        From bouldering in the desert to sport routes on limestone caves and ice
+        climbing in the mountains — climbing is the puzzle that never gets old.
+        Every problem is unique, every send is earned.
       </p>
 
-      {/* Photo placeholder grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {placeholderSlots.map((_, i) => (
+      {/* Masonry grid */}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 space-y-3">
+        {images.map((image, index) => (
           <motion.div
-            key={i}
-            className="aspect-square rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 flex flex-col items-center justify-center gap-2"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08, duration: 0.4 }}
+            key={index}
+            className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-xl"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => !loadErrors.has(index) && openLightbox(index)}
           >
-            <motion.div
-              animate={{ scale: [1, 1.08, 1] }}
-              transition={{ repeat: Infinity, duration: 2.5, delay: i * 0.4 }}
-            >
-              <Camera className="w-7 h-7 text-slate-300 dark:text-slate-600" />
-            </motion.div>
-            <span className="text-xs text-slate-400 dark:text-slate-500 font-medium">
-              Coming Soon
-            </span>
+            {loadErrors.has(index) ? (
+              /* Placeholder when image file is missing */
+              <div className="aspect-[3/4] flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-600">
+                <Mountain className="w-10 h-10 text-slate-400 dark:text-slate-500 mb-2" />
+                <p className="text-xs text-slate-400 dark:text-slate-500">
+                  Photo coming soon
+                </p>
+              </div>
+            ) : (
+              <>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto block rounded-xl transition-transform duration-300 group-hover:brightness-90"
+                  onError={() => handleImageError(index)}
+                  draggable={false}
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 rounded-xl bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <motion.div
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 backdrop-blur-sm rounded-full p-3"
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1 }}
+                  >
+                    <ZoomIn className="w-6 h-6 text-white" />
+                  </motion.div>
+                </div>
+              </>
+            )}
           </motion.div>
         ))}
       </div>
+
+      {/* Lightbox portal */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <Lightbox
+            images={images}
+            currentIndex={lightboxIndex}
+            direction={direction}
+            onClose={closeLightbox}
+            onNext={goNext}
+            onPrev={goPrev}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
