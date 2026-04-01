@@ -87,32 +87,32 @@ const SKYDIVING_IMAGES = [
 
 // ─── Books ────────────────────────────────────────────────────────────────────
 const BOOKS: MediaItem[] = [
-  { title: "The Pragmatic Programmer", subtitle: "Hunt & Thomas", emoji: "💻", genre: "Tech" },
-  { title: "Dune", subtitle: "Frank Herbert", emoji: "🏜️", genre: "Sci-Fi" },
-  { title: "Atomic Habits", subtitle: "James Clear", emoji: "⚙️", genre: "Self-Help" },
-  { title: "Project Hail Mary", subtitle: "Andy Weir", emoji: "🚀", genre: "Sci-Fi" },
-  { title: "The Hitchhiker's Guide", subtitle: "Douglas Adams", emoji: "🌌", genre: "Humor" },
-  { title: "Clean Code", subtitle: "Robert C. Martin", emoji: "✨", genre: "Tech" },
+  { title: "Words of Radiance", subtitle: "Brandon Sanderson", emoji: "💨", genre: "Fantasy" },
+  { title: "Faith of the Fallen", subtitle: "Terry Goodkind", emoji: "⚔️", genre: "Fantasy" },
+  { title: "Frankenstein", subtitle: "Mary Shelley", emoji: "⚡", genre: "Gothic" },
+  { title: "Emperor's Soul", subtitle: "Brandon Sanderson", emoji: "🪄", genre: "Fantasy" },
+  { title: "Rant", subtitle: "Chuck Palahniuk", emoji: "🦷", genre: "Fiction" },
+  { title: "American Gods", subtitle: "Neil Gaiman", emoji: "🌑", genre: "Fantasy" },
 ];
 
 // ─── Video Games ─────────────────────────────────────────────────────────────
 const GAMES: MediaItem[] = [
-  { title: "Elden Ring", subtitle: "FromSoftware", emoji: "⚔️", genre: "Action RPG" },
-  { title: "Zelda: BOTW", subtitle: "Nintendo", emoji: "🗡️", genre: "Adventure" },
-  { title: "Hollow Knight", subtitle: "Team Cherry", emoji: "🦋", genre: "Metroidvania" },
-  { title: "Stardew Valley", subtitle: "ConcernedApe", emoji: "🌾", genre: "Simulation" },
-  { title: "Minecraft", subtitle: "Mojang", emoji: "⛏️", genre: "Sandbox" },
-  { title: "Dark Souls", subtitle: "FromSoftware", emoji: "🔥", genre: "Action RPG" },
+  { title: "Half-Life 2", subtitle: "Valve", emoji: "🔴", genre: "FPS" },
+  { title: "Kingdom Hearts", subtitle: "Square Enix", emoji: "🗝️", genre: "Action RPG" },
+  { title: "God of War Ragnarök", subtitle: "Santa Monica", emoji: "🪓", genre: "Action" },
+  { title: "Red Dead Redemption 2", subtitle: "Rockstar", emoji: "🤠", genre: "Open World" },
+  { title: "Blue Prince", subtitle: "Dogubomb", emoji: "🔵", genre: "Puzzle" },
+  { title: "BioShock", subtitle: "2K Games", emoji: "🌊", genre: "FPS" },
 ];
 
 // ─── Movies ───────────────────────────────────────────────────────────────────
 const MOVIES: MediaItem[] = [
-  { title: "Interstellar", subtitle: "Christopher Nolan", emoji: "🪐", genre: "Sci-Fi" },
-  { title: "The Matrix", subtitle: "The Wachowskis", emoji: "💊", genre: "Sci-Fi" },
-  { title: "Mad Max: Fury Road", subtitle: "George Miller", emoji: "🔧", genre: "Action" },
-  { title: "Arrival", subtitle: "Denis Villeneuve", emoji: "🛸", genre: "Sci-Fi" },
-  { title: "Everything Everywhere", subtitle: "Daniels", emoji: "🥢", genre: "Drama" },
-  { title: "Grand Budapest Hotel", subtitle: "Wes Anderson", emoji: "🏨", genre: "Comedy" },
+  { title: "The Dark Knight", subtitle: "Christopher Nolan", emoji: "🦇", genre: "Action" },
+  { title: "Jurassic Park", subtitle: "Steven Spielberg", emoji: "🦕", genre: "Sci-Fi" },
+  { title: "Spider-Man: ATSV", subtitle: "Lord & Miller", emoji: "🕷️", genre: "Animation" },
+  { title: "Lucky Number Slevin", subtitle: "Paul McGuigan", emoji: "🃏", genre: "Thriller" },
+  { title: "The Hateful Eight", subtitle: "Quentin Tarantino", emoji: "❄️", genre: "Western" },
+  { title: "The Prestige", subtitle: "Christopher Nolan", emoji: "🎩", genre: "Thriller" },
 ];
 
 export default function SideQuestsPage() {
