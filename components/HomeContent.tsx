@@ -37,8 +37,9 @@ export function HomeContent({ posts }: HomeContentProps) {
           <span className="gradient-text">AI Journey</span>
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-          Documenting the path from restaurant tables to neural networks — the
-          wins, the confusion, and everything in between.
+          This is my website, that I had Claude build, to share what I'm doing and thinking.
+          It's a place for me practice and come up with new ideas to continue to learn and 
+          build.
         </p>
       </motion.div>
 

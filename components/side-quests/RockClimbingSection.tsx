@@ -53,9 +53,9 @@ export function RockClimbingSection({ images }: RockClimbingSectionProps) {
         </h2>
       </div>
       <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl">
-        From bouldering in the desert to sport routes on limestone caves and ice
-        climbing in the mountains — climbing is the puzzle that never gets old.
-        Every problem is unique, every send is earned.
+        I've been climbing for over 15 years and it is my favorite thing to do. Rock climbing is part
+        of the reason I dropped out of college. I don't climb has hard as I used to but I know I will never
+        stop.
       </p>
 
       {/* Masonry grid */}
