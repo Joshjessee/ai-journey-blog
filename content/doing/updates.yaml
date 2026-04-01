@@ -1,9 +1,9 @@
 - date: '2026-04-01'
   title: 2 updates to ai-journey-blog
-  description: "- Add hobbies showcase to Side Quests page\n- Merge pull request #12 from Joshjessee/claude/add-hobbies-side-quests-ZLnlu\n- Update HomeContent.tsx"
+  description: "- Add hobbies showcase to Side Quests page\n- Merge pull request #12 from Joshjessee/claude/add-hobbies-side-quests-ZLnlu\n- Update HomeContent.tsx\n- Revise description of current projects and learning"
   tags: [claude-code, github]
   status: completed
-  link: https://github.com/Joshjessee/ai-journey-blog/commit/6b441433098ee0cf126e1877349e52fda6dac7ad
+  link: https://github.com/Joshjessee/ai-journey-blog/commit/a39928ba2bb780cddd5bd72486e7db2cbb6f6def
 - date: '2026-03-31'
   title: Change section title from 'My Story' to 'My Hobbies'
   description: '- Change section title from ''My Story'' to ''My Hobbies'''
