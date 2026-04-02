@@ -32,7 +32,7 @@ export default function BlogPage() {
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             I started blogging for two main reasons. First, I really miss writing and this is an outlet
-            to let me write. Second, somewhat more importantly, this helps me think and reflect on what
+            for me to write. Second, somewhat more importantly, this helps me think and reflect on what
             I'm working on. One small side note, it holds me accountable by putting it out there. 
           </p>
         </div>
