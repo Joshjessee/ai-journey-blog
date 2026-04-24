@@ -1,6 +1,6 @@
 ---
 title: "An Overdue Update: The Struggle, The Progress, and What's Next"
-description: "An honest update on writing paralysis, AI coursework milestones, the company-building grind, and heading to my first professional convention."
+description: "An honest update on how everything's been going."
 date: "2026-04-24"
 tags: ["Personal", "Career", "Deep Learning", "AI"]
 ---
