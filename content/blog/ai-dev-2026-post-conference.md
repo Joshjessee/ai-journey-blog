@@ -5,8 +5,6 @@ date: "2026-05-05"
 tags: ["AI", "Deep Learning", "Career", "Personal"]
 ---
 
-# AI Dev 2026: Reflections From a Conference I Wasn't Ready For
-
 ## I'm Back!
 
 I've been back home for a couple of days and have taken a little time off to reflect on how Deep Learning's AI Dev 2026 conference went. First and foremost, I had a great time and I'm very happy I took the time to go. I know in my update post I talked about how nervous I was, and that only got worse when I arrived in San Francisco. This anxiety was only worsened when, to my excitement and chagrin, I was emailed the night before about winning an award at the conference. I won an award for most engaged learner! Turns out I had more certificates than any other attendee, and they wanted to announce that during the opening keynotes. Little did I know, but apparently 23 certificates and 153 hours in Deep Learning was quite a lot. Obviously, I was excited and honored to be recognized, but still nervous about being named in front of so many people, even if it is a very good opportunity. To my abject horror, I wasn't just named — I ended up coming on stage, meeting Andrew Ng, and accepting my award. I have never stood in front of so many people. I survived, but wasn't prepared for being recognized for the rest of the conference.
