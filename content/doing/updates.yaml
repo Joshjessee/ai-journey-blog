@@ -1,9 +1,9 @@
 - date: '2026-05-05'
   title: Add blog post about AI Dev 2026 conference reflections
-  description: '- Add blog post about AI Dev 2026 conference reflections'
+  description: "- Add blog post about AI Dev 2026 conference reflections\n- Remove title from AI Dev 2026 blog post"
   tags: [blog]
   status: completed
-  link: https://github.com/Joshjessee/ai-journey-blog/commit/dc8be61b2a0c9e20826131dfe9ec4483ad87e028
+  link: https://github.com/Joshjessee/ai-journey-blog/commit/d59878f0373e27affe4a5c515c21cc0b2b6d4bc3
 - date: '2026-04-24'
   title: Add files via upload
   description: "- Add files via upload\n- Update overdue-update-struggle-progress-whats-next.md"
