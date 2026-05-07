@@ -1,9 +1,9 @@
 - date: '2026-05-07'
   title: Add new directory for AI development blog images
-  description: "- Add new directory for AI development blog images\n- Add files via upload"
-  tags: [blog, github]
+  description: "- Add new directory for AI development blog images\n- Add files via upload\n- Add conference photos to AI Dev 2026 blog post\n- Merge pull request #15 from Joshjessee/claude/add-blog-post-content-2RL6p"
+  tags: [blog, github, claude-code]
   status: completed
-  link: https://github.com/Joshjessee/ai-journey-blog/commit/7f0dd095ded83160e28b31a84fc60a6b2f7843b5
+  link: https://github.com/Joshjessee/ai-journey-blog/compare/95e739b...22901f7
 - date: '2026-05-05'
   title: Add blog post about AI Dev 2026 conference reflections
   description: "- Add blog post about AI Dev 2026 conference reflections\n- Remove title from AI Dev 2026 blog post"
