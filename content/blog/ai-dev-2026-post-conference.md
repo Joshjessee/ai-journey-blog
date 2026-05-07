@@ -9,9 +9,13 @@ tags: ["AI", "Deep Learning", "Career", "Personal"]
 
 I've been back home for a couple of days and have taken a little time off to reflect on how Deep Learning's AI Dev 2026 conference went. First and foremost, I had a great time and I'm very happy I took the time to go. I know in my update post I talked about how nervous I was, and that only got worse when I arrived in San Francisco. This anxiety was only worsened when, to my excitement and chagrin, I was emailed the night before about winning an award at the conference. I won an award for most engaged learner! Turns out I had more certificates than any other attendee, and they wanted to announce that during the opening keynotes. Little did I know, but apparently 23 certificates and 153 hours in Deep Learning was quite a lot. Obviously, I was excited and honored to be recognized, but still nervous about being named in front of so many people, even if it is a very good opportunity. To my abject horror, I wasn't just named — I ended up coming on stage, meeting Andrew Ng, and accepting my award. I have never stood in front of so many people. I survived, but wasn't prepared for being recognized for the rest of the conference.
 
+![Receiving the Always be Learning award on stage at AI Dev 26 x SF](/images/blog/ai-dev-2026/always-be-learning-award.jpg)
+
 ## My Brief Flash of Fame
 
 The one thing I was not prepared for at all was the number of people that wanted to talk to me. After all of the opening keynotes, I had quite a number of people coming up to congratulate me about my award. People were shocked and excited by the sheer number of certificates I'd received. On day one, I was definitely too shy about the attention. At the end of the day I told myself that I should embrace the compliments and attention and use it. I definitely wasted some opportunities to talk to people on day one. Accepting the attention on day two changed everything. I had so many people coming up to talk to me once they realized they could approach me that I spent almost an hour and a half with a constant stream of people ready to talk and ask me questions. I met some very cool, interesting people and learned that business cards aren't much of a thing anymore. Everyone asked me for my LinkedIn, which I have but don't use often, while I had had business cards made to hand out.
+
+![The Perfect Timing award — celebrating everyone who started their AI Dev journey on Pi Day](/images/blog/ai-dev-2026/perfect-timing-award.jpg)
 
 ## Feeling Validated
 
