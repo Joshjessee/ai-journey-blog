@@ -1,3 +1,8 @@
+- date: '2026-06-17'
+  title: 'Opened PR in WineBook: undefined'
+  description: '- Opened PR: undefined'
+  tags: [WineBook]
+  status: completed
 - date: '2026-05-17'
   title: Add files via upload
   description: "- Add files via upload\n- Fix blog post 6 image extensions from .jpg to .jpeg\n- Merge pull request #16 from Joshjessee/claude/fix-blog-post-images-DpuhL"
