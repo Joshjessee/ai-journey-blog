@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { Twitter, Linkedin } from "lucide-react";
+import { Twitter, Linkedin, Github, Mail } from "lucide-react";
 
 const socialLinks = [
   { href: "https://x.com/Maxluria3000", label: "X (Twitter)", icon: Twitter },
   { href: "https://www.linkedin.com/in/joshua-jessee-94a069327", label: "LinkedIn", icon: Linkedin },
+  { href: "https://github.com/Joshjessee", label: "GitHub", icon: Github },
+  { href: "mailto:Joshjessee77@gmail.com", label: "Email", icon: Mail },
 ];
 
 const pageLinks = [
