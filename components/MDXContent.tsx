@@ -11,6 +11,7 @@
 */
 
 import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeSlug from "rehype-slug";
 
 // Custom components that can be used in MDX files
 // For example, you could write <Callout>Note!</Callout> in your markdown
@@ -75,17 +76,17 @@ const components = {
 
   // Headers with anchor links
   h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="text-3xl font-bold text-slate-900 dark:text-white mt-8 mb-4" {...props}>
+    <h1 className="text-3xl font-bold text-slate-900 dark:text-white mt-8 mb-4 scroll-mt-24" {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mt-8 mb-3" {...props}>
+    <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mt-8 mb-3 scroll-mt-24" {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mt-6 mb-2" {...props}>
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mt-6 mb-2 scroll-mt-24" {...props}>
       {children}
     </h3>
   ),
@@ -143,6 +144,13 @@ export function MDXContent({ content }: MDXContentProps) {
     <MDXRemote
       source={content}
       components={components}
+      options={{
+        mdxOptions: {
+          // Add id attributes to headings so the table of contents can
+          // link to them (ids match lib/blog.ts getHeadings via github-slugger).
+          rehypePlugins: [rehypeSlug],
+        },
+      }}
     />
   );
 }
