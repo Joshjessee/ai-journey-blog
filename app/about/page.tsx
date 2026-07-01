@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="text-center mb-12">
           {/* Profile image placeholder - replace with your image */}
           <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-            <span className="text-4xl text-white font-bold">YN</span>
+            <span className="text-4xl text-white font-bold">JJ</span>
           </div>
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
             About Me
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-3">
               {[
                 { href: "mailto:your@email.com", icon: Mail, label: "Email" },
-                { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
+                { href: "https://github.com/Joshjessee", icon: Github, label: "GitHub" },
                 { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
                 { href: "https://linkedin.com/in/yourusername", icon: Linkedin, label: "LinkedIn" },
               ].map((social) => {
@@ -164,10 +164,10 @@ export default function AboutPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/learn"
+              href="/doing"
               className="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-white rounded-lg font-medium transition-colors"
             >
-              View Learning Progress
+              See What I&apos;m Doing
             </Link>
           </div>
         </div>
