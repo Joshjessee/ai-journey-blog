@@ -14,6 +14,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import GithubSlugger from "github-slugger";
 
 // Define the structure of a blog post's frontmatter (metadata)
 export interface BlogPost {
@@ -156,6 +157,82 @@ export function getPostsByTag(tag: string): BlogPost[] {
   return getAllPosts().filter((post) =>
     post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase())
   );
+}
+
+// A single entry in a post's table of contents.
+export interface Heading {
+  id: string;    // slug id (matches rehype-slug output)
+  text: string;  // heading text
+  level: number; // 2 for h2, 3 for h3
+}
+
+/*
+  Extract h2/h3 headings from raw markdown for a table of contents.
+  Uses github-slugger so the generated ids match those produced by
+  rehype-slug when the markdown is rendered (see components/MDXContent.tsx).
+  Skips fenced code blocks so "# comments" inside code aren't treated as
+  headings.
+*/
+export function getHeadings(content: string): Heading[] {
+  const slugger = new GithubSlugger();
+  const headings: Heading[] = [];
+  let inCodeBlock = false;
+
+  for (const line of content.split("\n")) {
+    if (/^\s*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+    if (inCodeBlock) continue;
+
+    const match = /^(#{2,3})\s+(.*)$/.exec(line.trim());
+    if (match) {
+      const level = match[1].length;
+      const text = match[2].replace(/#+\s*$/, "").trim();
+      headings.push({ id: slugger.slug(text), text, level });
+    }
+  }
+
+  return headings;
+}
+
+/*
+  Get the previous (newer) and next (older) posts relative to a slug,
+  based on the date-sorted list. Used for prev/next navigation.
+*/
+export function getAdjacentPosts(slug: string): {
+  prev: BlogPost | null;
+  next: BlogPost | null;
+} {
+  const posts = getAllPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+  return {
+    prev: index > 0 ? posts[index - 1] : null,
+    next: index < posts.length - 1 ? posts[index + 1] : null,
+  };
+}
+
+/*
+  Get related posts by shared-tag overlap, most overlap first.
+  Falls back to the most recent other posts when nothing shares a tag.
+*/
+export function getRelatedPosts(slug: string, limit = 2): BlogPost[] {
+  const posts = getAllPosts();
+  const current = posts.find((p) => p.slug === slug);
+  if (!current) return [];
+
+  const currentTags = new Set(current.tags.map((t) => t.toLowerCase()));
+
+  const scored = posts
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      post: p,
+      score: p.tags.filter((t) => currentTags.has(t.toLowerCase())).length,
+    }))
+    .sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, limit).map((s) => s.post);
 }
 
 /*

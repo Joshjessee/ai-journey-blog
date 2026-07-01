@@ -221,14 +221,17 @@ export async function GET() {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
+  // Limit to the 25 most recent articles
+  const news = allNews.slice(0, 25);
+
   // Mark the top 2 most recent as featured
-  for (let i = 0; i < Math.min(2, allNews.length); i++) {
-    allNews[i].featured = true;
+  for (let i = 0; i < Math.min(2, news.length); i++) {
+    news[i].featured = true;
   }
 
   return NextResponse.json(
     {
-      news: allNews,
+      news,
       fetchedAt: new Date().toISOString(),
       sourceCount: RSS_FEEDS.length,
     },
