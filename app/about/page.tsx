@@ -7,7 +7,7 @@
 
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Twitter, BookText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
@@ -124,10 +124,10 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                { href: "mailto:your@email.com", icon: Mail, label: "Email" },
                 { href: "https://github.com/Joshjessee", icon: Github, label: "GitHub" },
-                { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
-                { href: "https://linkedin.com/in/yourusername", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://x.com/Maxluria3000", icon: Twitter, label: "X" },
+                { href: "https://www.linkedin.com/in/joshua-jessee-94a069327", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://substack.com/@maxluria", icon: BookText, label: "Substack" },
               ].map((social) => {
                 const Icon = social.icon;
                 return (

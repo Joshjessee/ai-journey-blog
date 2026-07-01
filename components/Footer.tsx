@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Github, BookText, Twitter, Mail } from "lucide-react";
+import { Github, BookText, Twitter, Linkedin } from "lucide-react";
 
 const socialLinks = [
   { href: "https://github.com/Joshjessee", label: "GitHub", icon: Github },
-  { href: "https://yourusername.substack.com", label: "Substack", icon: BookText },
-  { href: "https://twitter.com/yourusername", label: "Twitter", icon: Twitter },
-  { href: "mailto:your@email.com", label: "Email", icon: Mail },
+  { href: "https://x.com/Maxluria3000", label: "X", icon: Twitter },
+  { href: "https://www.linkedin.com/in/joshua-jessee-94a069327", label: "LinkedIn", icon: Linkedin },
+  { href: "https://substack.com/@maxluria", label: "Substack", icon: BookText },
 ];
 
 const pageLinks = [
