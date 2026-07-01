@@ -1,13 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
+import { NeuralBackground } from "./NeuralBackground";
+import { HeroStats, type HeroStatsData } from "./HeroStats";
 
 interface HomeContentProps {
   posts: BlogPost[];
+  stats: HeroStatsData;
 }
+
+// Phrases that rotate under the hero title.
+const TAGLINES = [
+  "Learning AI in public, one post at a time.",
+  "From restaurant tables to neural networks.",
+  "Building, breaking, and writing it all down.",
+  "Notes, experiments, and the occasional side quest.",
+];
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -18,7 +30,36 @@ function formatDate(dateString: string): string {
   });
 }
 
-export function HomeContent({ posts }: HomeContentProps) {
+function RotatingTagline() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % TAGLINES.length),
+      3500
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="h-7 mb-6" aria-live="polite">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={index}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.4 }}
+          className="text-lg text-primary-600 dark:text-primary-400 font-medium"
+        >
+          {TAGLINES[index]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export function HomeContent({ posts, stats }: HomeContentProps) {
   const featuredPost = posts.find((p) => p.featured) || posts[0];
   const recentPosts = posts
     .filter((p) => p.slug !== featuredPost?.slug)
@@ -26,22 +67,27 @@ export function HomeContent({ posts }: HomeContentProps) {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-      {/* Simplified Intro */}
-      <motion.div
+      {/* Animated Hero */}
+      <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-16"
+        className="relative mb-16 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-primary-50/60 via-white to-accent-50/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800/60 px-6 py-12 sm:px-10 sm:py-14"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4 text-balance">
-          <span className="gradient-text">AI Journey</span>
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-          This is my website, that I had Claude build, to share what I'm doing and thinking.
-          It's a place for me practice and come up with new ideas to continue to learn and 
-          build.
-        </p>
-      </motion.div>
+        <NeuralBackground />
+        <div className="relative">
+          <h1 className="text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-3 text-balance">
+            <span className="gradient-text">AI Journey</span>
+          </h1>
+          <RotatingTagline />
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-8">
+            This is my website, that I had Claude build, to share what I&apos;m doing
+            and thinking. It&apos;s a place for me to practice and come up with new
+            ideas to continue to learn and build.
+          </p>
+          <HeroStats stats={stats} />
+        </div>
+      </motion.section>
 
       {/* Featured Post */}
       {featuredPost && (
