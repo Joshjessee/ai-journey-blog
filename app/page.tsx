@@ -32,7 +32,10 @@ export default function HomePage() {
     Math.round((Date.now() - startTime) / (1000 * 60 * 60 * 24))
   );
 
-  const latest = doingItems[0];
+  // Skip malformed log entries (e.g. auto-generated "... : undefined")
+  // so the homepage never surfaces a broken-looking activity string.
+  const latest =
+    doingItems.find((d) => !/undefined/i.test(d.title)) ?? doingItems[0];
 
   const stats: HeroStatsData = {
     postCount: posts.length,
