@@ -8,10 +8,17 @@
   - Animations
 */
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, getAllTags } from "@/lib/blog";
 import { BlogList } from "@/components/BlogList";
 import { Calendar, Tag } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Backprop Diaries — posts documenting my journey from the restaurant industry into AI: learning notes, decisions, and reflections.",
+};
 
 // This tells Next.js to render this page at build time (Static Generation)
 // Great for performance since blog posts don't change frequently

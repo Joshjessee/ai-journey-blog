@@ -18,6 +18,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 // Metadata for SEO - this appears in browser tabs and search results
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ai-journey-blog-iota.vercel.app"),
   title: {
     default: "AI Journey | From Restaurant to AI",
     template: "%s | AI Journey",
@@ -30,6 +31,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "AI Journey Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 
