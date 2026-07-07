@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Follow my journey transitioning from the restaurant industry into AI. Learning notes, projects, and insights.",
   keywords: ["AI", "machine learning", "career change", "learning journey", "NLP", "prompt engineering"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Josh Jessee" }],
   openGraph: {
     type: "website",
     locale: "en_US",
