@@ -126,6 +126,8 @@ const components = {
     <img
       src={src}
       alt={alt || ""}
+      loading="lazy"
+      decoding="async"
       className="rounded-lg shadow-md my-6 max-w-full"
       {...props}
     />

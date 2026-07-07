@@ -81,6 +81,8 @@ export function RockClimbingSection({ images }: RockClimbingSectionProps) {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto block rounded-xl transition-transform duration-300 group-hover:brightness-90"
                   onError={() => handleImageError(index)}
                   draggable={false}

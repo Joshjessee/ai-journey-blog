@@ -42,10 +42,10 @@ const config: Config = {
           900: "#7c2d12",
         },
       },
-      // Custom fonts (we'll use system fonts for fast loading)
+      // Fonts are self-hosted via next/font (see app/layout.tsx)
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "Consolas", "monospace"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "Consolas", "monospace"],
       },
       // Animation timing for smooth transitions
       animation: {
