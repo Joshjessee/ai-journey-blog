@@ -1,5 +1,7 @@
-/* Import Google Fonts - must be before all other rules */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/*
+  Fonts are self-hosted via next/font in app/layout.tsx, which exposes
+  the CSS variables --font-inter and --font-jetbrains-mono.
+*/
 
 /*
   Global Styles for AI Journey Blog
@@ -43,7 +45,7 @@ body {
   /* Use CSS variables with Tailwind's rgb() syntax */
   background-color: rgb(var(--background));
   color: rgb(var(--foreground));
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 /* Custom utility classes */

@@ -1,7 +1,7 @@
 ---
 title: "Neural Networks Explained: A Beginner's Mental Model"
 description: "How I finally understood neural networks by thinking of them like a restaurant kitchen brigade."
-date: "2024-01-22"
+date: "2026-01-22"
 tags: ["Machine Learning", "Neural Networks", "Beginner"]
 ---
 # I did not write this

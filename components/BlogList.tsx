@@ -8,7 +8,7 @@
   - Hover effects
 */
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Search, Calendar, Clock, ArrowRight } from "lucide-react";
@@ -30,6 +30,13 @@ function formatDate(dateString: string): string {
 
 export function BlogList({ posts }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Stagger the entrance animation only on first mount — filtered cards
+  // re-mount while typing and shouldn't re-animate on every keystroke.
+  const hasAnimated = useRef(false);
+  useEffect(() => {
+    hasAnimated.current = true;
+  }, []);
 
   // Filter posts based on search query
   const filteredPosts = posts.filter((post) => {
@@ -62,9 +69,9 @@ export function BlogList({ posts }: BlogListProps) {
         {filteredPosts.map((post, index) => (
           <motion.article
             key={post.slug}
-            initial={{ opacity: 0, y: 20 }}
+            initial={hasAnimated.current ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: hasAnimated.current ? 0 : index * 0.1 }}
             className="group"
           >
             <Link href={`/blog/${post.slug}`}>

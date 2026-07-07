@@ -11,13 +11,29 @@
 */
 
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
+// Self-hosted via next/font — replaces the render-blocking Google Fonts
+// @import that used to live in globals.css.
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
 // Metadata for SEO - this appears in browser tabs and search results
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ai-journey-blog-iota.vercel.app"),
   title: {
     default: "AI Journey | From Restaurant to AI",
     template: "%s | AI Journey",
@@ -25,11 +41,19 @@ export const metadata: Metadata = {
   description:
     "Follow my journey transitioning from the restaurant industry into AI. Learning notes, projects, and insights.",
   keywords: ["AI", "machine learning", "career change", "learning journey", "NLP", "prompt engineering"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Josh Jessee" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "AI Journey Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 
@@ -39,7 +63,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
       {/*
         suppressHydrationWarning is needed because we're adding a class
         to <html> for dark mode, and it might differ between server and client
