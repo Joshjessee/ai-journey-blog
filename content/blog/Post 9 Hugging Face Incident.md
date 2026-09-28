@@ -1,6 +1,6 @@
 ---
 title: Hugging Face Incident
-description: My thoughts on the Hugging Face Incident
+description: My thoughts on the controversy surrounding Hugging Face Incident
 date: 2026-09-09
 tags:
   - blog-post
