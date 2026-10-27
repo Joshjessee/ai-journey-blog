@@ -53,8 +53,8 @@ export function SkyDivingGallery({ images }: SkyDivingGalleryProps) {
         </h2>
       </div>
       <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl">
-        I've been skydiving for a little over a decade. I prefer angle flying and free flying
-        but I'm always just happy to jump out of plane. 
+        I&apos;ve been skydiving for a little over a decade. I prefer angle flying and free flying
+        but I&apos;m always just happy to jump out of plane. 
       </p>
 
       {/* Masonry grid */}

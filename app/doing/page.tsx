@@ -18,8 +18,8 @@ export default function DoingPage() {
           What I&apos;m Doing
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
-          This is where I try to show what I'm working on. I had Claude connect my github so it automatically
-          posts my commits everyday, I'm still very new to Github but I'm trying to use it everyday so I
+          This is where I try to show what I&apos;m working on. I had Claude connect my github so it automatically
+          posts my commits everyday, I&apos;m still very new to Github but I&apos;m trying to use it everyday so I
           understand how it works.
         </p>
       </div>

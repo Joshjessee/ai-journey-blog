@@ -53,8 +53,8 @@ export function RockClimbingSection({ images }: RockClimbingSectionProps) {
         </h2>
       </div>
       <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl">
-        I've been climbing for over 15 years and it is my favorite thing to do. Rock climbing is part
-        of the reason I dropped out of college. I don't climb has hard as I used to but I know I will never
+        I&apos;ve been climbing for over 15 years and it is my favorite thing to do. Rock climbing is part
+        of the reason I dropped out of college. I don&apos;t climb has hard as I used to but I know I will never
         stop.
       </p>
 
